@@ -6,7 +6,7 @@ import {userActions} from '../actions/user.action';
 
 class HomePage extends Component{
     componentDidMount(){
-        this.props.dispatch(userActions.getAll());    
+        //this.props.dispatch(userActions.getAll());    
     }
     handleDeleteUser(id){
         return (e)=> this.props.dispatch(userActions.delete(id));

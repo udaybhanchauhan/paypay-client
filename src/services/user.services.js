@@ -11,13 +11,15 @@ export const userService={
     delete:_delete
 };
 
+
 function login(username, password){
+
+
     const requestOptions={
         method:'POST',
         header:{'Content-Type':'application/json'},
         body: JSON.stringify({username,password})
     }
-    
     return fetch(`${config.apiUrl}/user/authenticate`,requestOptions)
             .then(handleResponse)
             .then(user=>{
@@ -41,13 +43,13 @@ function getAll(){
             .then (handleResponse);
 }
 
-function getById(id){
-    const requestOptions={
-        method:'GET',
-        header:authHeader()
+function getById(id) {
+    const requestOptions = {
+        method: 'GET',
+        headers: authHeader()
     };
-    return fetch(`${config.apiUrl}/user/${id}`,requestOptions)
-            .then (handleResponse);
+
+    return fetch(`${config.apiUrl}/users/${id}`, requestOptions).then(handleResponse);
 }
 
 function register(user){
@@ -57,7 +59,7 @@ function register(user){
             body:JSON.stringify(user)
         }
 
-        return fetch(`${config.apiUrl}/users/register`,requestOptions)
+        return fetch(`${config.apiUrl}/user/register`,requestOptions)
                 .then(handleResponse);
 }
 

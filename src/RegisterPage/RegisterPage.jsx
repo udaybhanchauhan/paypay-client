@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {userActions} from '../actions';
+import {userActions} from '../actions/user.action';
 
 class RegisterPage extends Component{
     constructor(props){
@@ -27,12 +27,12 @@ class RegisterPage extends Component{
             }
         });
     }
-    handleSubmit(e){
-        e.prventDefault();
+    handleSubmit(event){
+        event.preventDefault();
         this.setState({submitted:true});
         const {user}=this.state;
         const {dispatch}=this.props;
-        if(user.firstName && user.lastName && user.username & user.password){
+        if(user.firstName && user.lastName && user.username && user.password){
             dispatch(userActions.register(user));
         }
     }

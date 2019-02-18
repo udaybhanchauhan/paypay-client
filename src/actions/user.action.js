@@ -31,7 +31,7 @@ function login(username,password){
         return {type:userConstants.LOGIN_REQUEST,user}
     }
     function sucess(user){
-        return {type:userConstants.LOGIN_SUCESS,user}
+        return {type:userConstants.LOGIN_SUCCESS,user}
     }
     function failure(user){
         return {type:userConstants.LOGIN_FAILURE,user}
@@ -44,14 +44,15 @@ function logout(){
 }
 
 function register(user){
+    
     return dispatch=>{
         dispatch(request(user));
         userService.register(user)
             .then(
                 user=>{
-                    dispatch(sucess());
+                    dispatch(success());
                     history.push('./login')
-                    dispatch(alertActions.sucess('Registration successful'));
+                    dispatch(alertActions.success('Registration successful'));
                 },
                 error=>{
                     dispatch(failure(error.toString()));
@@ -59,18 +60,13 @@ function register(user){
                 }
             )
     }
-    function request(user){
-        return {type:userConstants.LOGIN_REQUEST,user}
-    }
-    function sucess(user){
-        return {type:userConstants.LOGIN_SUCESS,user}
-    }
-    function failure(user){
-        return {type:userConstants.LOGIN_FAILURE,user}
-    }
+    function request(user) { return { type: userConstants.REGISTER_REQUEST, user } }
+    function success(user) { return { type: userConstants.REGISTER_SUCCESS, user } }
+    function failure(error) { return { type: userConstants.REGISTER_FAILURE, error } }
 }
 
 function getAll() {
+    debugger;
     return dispatch => {
         dispatch(request());
 
