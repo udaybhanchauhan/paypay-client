@@ -6,9 +6,6 @@ import {userActions} from '../actions/user.action';
 class LoginPage extends Component{
     constructor(props){
         super(props);
-        //reset login status
-        //this is only in sprint 1 code
-        console.log("Hi");
         this.props.dispatch(userActions.logout());
         this.state={
             username:'',

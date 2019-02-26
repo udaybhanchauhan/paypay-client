@@ -7,6 +7,8 @@ import {PrivateRoute} from '../components/PrivateRoute';
 import {HomePage} from '../HomePage/HomePage';
 import {LoginPage} from '../LoginPage/LoginPage';
 import {RegisterPage} from '../RegisterPage/RegisterPage';
+import AboutUs from '../components/AboutUs/AboutUs';
+import Header from '../components/Header';
 
 class App extends Component{
     constructor(props){
@@ -19,6 +21,8 @@ class App extends Component{
     }
     render(){
         const {alert}=this.props;
+        const loggedIn=this.props;
+        console.log("loggedIn=="+JSON.stringify(loggedIn));
         return(
             <div className="jumbotron">
                 <div className="container">
@@ -29,9 +33,11 @@ class App extends Component{
                     </div>
                     <Router history={history}>
                         <div>
+                            {loggedIn.loggedIn &&  <Header/>}
                             <PrivateRoute exact path="/" component={HomePage}/>
                             <Route path="/login" component={LoginPage}/>
                             <Route path="/register" component={RegisterPage}/>
+                            <PrivateRoute path="/about" component={AboutUs}/>
                         </div>
                     </Router>
                 </div>
@@ -42,8 +48,10 @@ class App extends Component{
 
 function mapStateToProps(state){
     const {alert}=state;
+    const {loggedIn}=state.authentication;
     return {
-        alert
+        alert,
+        loggedIn
     };
 }
 

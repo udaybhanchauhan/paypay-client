@@ -10,17 +10,13 @@ export const userService={
     update,
     delete:_delete
 };
-
-
 function login(username, password){
-
-
     const requestOptions={
         method:'POST',
-        header:{'Content-Type':'application/json'},
+        headers:{'Content-Type':'application/json'},
         body: JSON.stringify({username,password})
     }
-    return fetch(`${config.apiUrl}/user/authenticate`,requestOptions)
+    return fetch(`${config.apiUrl}/users/authenticate`,requestOptions)
             .then(handleResponse)
             .then(user=>{
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -39,7 +35,7 @@ function getAll(){
         method:'GET',
         header:authHeader()
     };
-    return fetch(`${config.apiUrl}/user/`,requestOptions)
+    return fetch(`${config.apiUrl}/users/`,requestOptions)
             .then (handleResponse);
 }
 
@@ -59,7 +55,7 @@ function register(user){
             body:JSON.stringify(user)
         }
 
-        return fetch(`${config.apiUrl}/user/register`,requestOptions)
+        return fetch(`${config.apiUrl}/users/register`,requestOptions)
                 .then(handleResponse);
 }
 

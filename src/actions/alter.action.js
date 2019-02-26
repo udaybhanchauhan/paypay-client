@@ -1,13 +1,13 @@
 import {alertConstants} from '../constants/alter.constants';
 
 export const alertActions={
-    sucess,
+    success,
     error,
     clear
 };
 
-function sucess(message){
-    return {type:alertConstants.SUCESS,message}
+function success(message){
+    return {type:alertConstants.SUCCESS,message}
 }
 function error(message){
     return {type:alertConstants.ERROR,message}

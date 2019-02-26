@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {userActions} from '../actions/user.action';
-
+import Header from '../components/Header';
 
 class HomePage extends Component{
     componentDidMount(){
@@ -16,11 +16,13 @@ class HomePage extends Component{
         const {user,users}=this.props;
         return(
             <div className="col-md-6 col-md-offset-3">
-                <h1>Hi {user.firstName}!</h1>
+                
+                
+                {/* <h1>Hi {user.firstName}!</h1> */}
                 <p>You're logged in with React!!</p>
-                <h3>All Register Users:</h3>
-                {users.loading && <em> Loading Users ...</em>}
-                {users.items && 
+                
+                {/* {users.loading && <em> Loading Users ...</em>} */}
+                {/* {users.items && 
                     <ul>
                         {users.items.map((user,index)=>
                             <li key={user.id}>
@@ -33,21 +35,22 @@ class HomePage extends Component{
                             </li>
                         )}
                     </ul>
-                }
+                } */}
                 <p>
                     <Link to="/login">Logout</Link>
                 </p>
-            </div>
+               
+            </div>            
         );
     }
 }
 
 function mapStateToProps(state){
-    const {users,authentication}=state;
-    const {user}=authentication;
+    //const {users,authentication}=state;
+    //const {user}=authentication;
     return {
-        users,
-        user
+        // users,
+        // user
     };
 }
 
