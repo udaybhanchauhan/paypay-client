@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Reports" transform="translate(-259.000000, -424.000000)">
+            <rect fill="transparent" x="0" y="0" width="1440" height="1532"></rect>
+            <g id="Conversation" transform="translate(209.000000, 238.000000)" stroke="#2A2C2E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                <g id="icon-thumbs-DOWN" transform="translate(51.000000, 182.000000)">
+                    <path d="M16,20 L12,20 L12,11 L16,11 L16,20 Z M3.524,18 L3,18 L3.524,18 Z M2,16 L2.981,16 L2,16 Z M1,13 L2,13 L1,13 Z M12,11.9977697 L12,18.7305264 C7.91290112,20.0821476 3.04872853,19.9990021 3.04872853,19.9990021 C1.18169318,19.9990021 1.57794931,18.0106081 2.9272786,18.0106081 L2.03904734,18.0106081 C0.507543151,18.0106081 0.504455441,15.7819034 2.03904734,15.7819034 L1.2691783,15.7819034 C-0.238653447,15.7819034 -0.279822915,13.5521848 1.2691783,13.5521848 L1.14978684,13.5521848 C-0.38068811,13.5521848 -0.385834293,11.3234801 1.14978684,11.3234801 L6.65517388,11.3234801 C4.17162576,5.44245764 8.63233756,3.66091344 8.42340251,5.99000111 C8.14859632,9.06232834 12,11.9977697 12,11.9977697 Z" id="Path" transform="translate(8.000000, 12.500000) scale(-1, 1) translate(-8.000000, -12.500000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
