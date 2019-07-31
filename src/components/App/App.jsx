@@ -4,10 +4,10 @@ import {connect} from 'react-redux';
 import {history} from '../../helpers/history';
 import {alertActions} from '../../actions/alter.action';
 import {PrivateRoute} from '../PrivateRoute';
-import {HomePage} from '../HomePage/HomePage';
+
 import {LoginPage} from '../LoginPage/LoginPage';
 import {RegisterPage} from '../RegisterPage/RegisterPage';
-import AboutUs from '../AboutUs/AboutUs';
+
 import Header from '../Header/Header';
 import EmpInfo from '../../container/EmpInfo/EmpInfo'
 
@@ -21,7 +21,7 @@ class App extends Component{
         });
     }
     render(){
-        const {alert}=this.props;
+       
         const loggedIn=this.props;
         
         return(

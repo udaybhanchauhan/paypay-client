@@ -1,13 +1,6 @@
 import React from 'react';
 import {BootstrapTable,TableHeaderColumn} from 'react-bootstrap-table'
-import RowEditor from './RowEditor';
-import RowEditor1 from './RowEditor1';
-
-function attachFormatter(cell, row){
-  return (
-     <RowEditor1 row={row} />
-  );
-}
+import {Button} from 'reactstrap'
 
   export default class EmpInfo extends React.Component {
     constructor(props) {
@@ -16,20 +9,12 @@ function attachFormatter(cell, row){
           showModal: false,
           selectedRow: null
          };
-        this.options = {
+         this.options = {
           onPageChange: this.onPageChange.bind(this),
           onSizePerPageList: this.sizePerPageListChange.bind(this)
         };
       }
-      openModal() {
-        this.setState((prevState, props) => {
-         return {
-          selectedRow: props.row,
-          showModal: true
-         }
-        });
-       }
-    
+      
       sizePerPageListChange(sizePerPage) {
         console.log(`sizePerPage: ${sizePerPage}`);
       }
@@ -37,11 +22,11 @@ function attachFormatter(cell, row){
       onPageChange(page, sizePerPage) {
         console.log(`page: ${page}, sizePerPage: ${sizePerPage}`);
       }
-     
-      createCustomDeleteButton = (onBtnClick) => {
+      createCustomDeleteButton = (cell,row) => {
         
         return (
-          <button style={ { color: 'red' } } onClick={()=>{this.props.onBtnClick(onBtnClick)} }>Delete it!!!</button>
+          <Button color="primary" onClick={()=>{this.props.onBtnClick(row)} }>Employee Review</Button> 
+          
         );
       }
 
@@ -53,7 +38,7 @@ function attachFormatter(cell, row){
       }
    
       return (
-          <div>
+          <div style={{margin:'50px'}}>
           <div>
               <h2 style={{'textAlign':'center',color:'#8f3181'}} >Employee Info</h2>
           </div>
@@ -67,8 +52,8 @@ function attachFormatter(cell, row){
             <TableHeaderColumn dataField='emp_name'>Name</TableHeaderColumn>
             <TableHeaderColumn dataField='emp_since'>Employee Since</TableHeaderColumn>
             <TableHeaderColumn dataField='position'>Position</TableHeaderColumn>
-            <TableHeaderColumn dataField='division' dataFormat={ this.createCustomDeleteButton } >Division</TableHeaderColumn> 
-            <TableHeaderColumn dataField='emp_review' dataFormat={attachFormatter} >Employee Reviews</TableHeaderColumn>
+            <TableHeaderColumn dataField='division'  >Division</TableHeaderColumn> 
+            <TableHeaderColumn dataField='emp_review' dataFormat={ this.createCustomDeleteButton } >Employee Reviews</TableHeaderColumn>
 
         </BootstrapTable>
         </div>
