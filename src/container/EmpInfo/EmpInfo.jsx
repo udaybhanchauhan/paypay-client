@@ -19,6 +19,11 @@ class EmpInfoCon extends Component{
         this.setState({empReview:true,selectedEmpDetails:row});
         
     }
+    goHomePage=()=>{
+       
+        this.props.dispatch(empInfoAction.empDetails());    
+        this.setState({empReview:false});
+    }
     addReview=(a,b,c,d,e,f,selectedEmpId)=>{
         this.props.dispatch(empReviewInfoAction.empReviewAdd(a,b,c,d,e,f,selectedEmpId));
         this.props.dispatch(empReviewInfoAction.empReviewDetails());
@@ -28,7 +33,7 @@ class EmpInfoCon extends Component{
         return(
             <div>
                 {!this.state.empReview && <EmpInfo onBtnClick={this.getUserReview} empInfo={this.props.empInfo}/>}
-                {this.state.empReview && <EmpReviewInfo addReview={this.addReview} empReviewInfo={this.props.empReviewInfo} selectedEmpDetails={this.state.selectedEmpDetails}/>}
+                {this.state.empReview && <EmpReviewInfo goHomePage={this.goHomePage} addReview={this.addReview} empReviewInfo={this.props.empReviewInfo} selectedEmpDetails={this.state.selectedEmpDetails}/>}
             </div>
         )
     }

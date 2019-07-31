@@ -103,6 +103,7 @@ var selectedEmpDetails;
                   {/* <Button color="success" onClick={()=>{  attachFormatterC(showModelF)}}>Add New Review</Button>             */}
               </div>            
                 <div >
+                  <Button color="primary" onClick={()=>{ this.props.goHomePage() }}>Go To Home</Button> 
                 <h2 style={{'textAlign':'center',color:'#8f3181'}} >All Reviews</h2>
               </div>
           </div>
